@@ -12,8 +12,9 @@
         </mat-form-field>     
     </form>
 
+    <p *ngIf="todo.length < 1">You're rock! There are no more tasks.</p>
     <div class="list">
-        <h3>Ongoing List</h3>
+        <h3 *ngIf="todo.length > 0">Ongoing List</h3>
         <mat-selection-list cdkDropList 
           [cdkDropListData]="todo" 
           [cdkDropListConnectedTo]="secondList" 
@@ -24,41 +25,17 @@
               <mat-divider></mat-divider>
             </mat-list-option>
         </mat-selection-list>
-        <h3>Done</h3>
+        <h3 *ngIf="done.length > 0">Done</h3>
         <mat-list cdkDropList 
           [cdkDropListData]="done" 
           [cdkDropListConnectedTo]="firstList" 
           #secondList="cdkDropList"
           (cdkDropListDropped)="drop($event, 'done')">
-            <mat-list-item role="listitem" *ngFor="let task of done" cdkDrag>
-              <s style="color: grey;">{{ task.title }}</s>
+            <mat-list-item role="listitem" *ngFor="let task of done; let i = index" cdkDrag>
+              <mat-icon matListIcon (click)="deleteTask(i)">delete_forever</mat-icon>
+              <s style="color: grey;">{{ task.title }}</s>              
               <mat-divider></mat-divider>
             </mat-list-item>
         </mat-list>   
-    </div>
-  <!-- <form  (ngSubmit)="onSubmit(f)" #f="ngForm"> 
-    <div class="row">
-      <div class="col-6">
-        <div class="form-group">
-          <label>New Task</label>
-          <input type="text" class="form-control" name="taskName" ngModel>
-        </div>
-      </div>
-    
-      <div class="col-6">
-        <button type="submit" class="btn btn-success" value="Add Item">Add Item </button>
-      </div>
-    </div>
-  </form>
-  
-  <div style="display: flex">
-    <div cdkDropList [cdkDropListData]="todo" [cdkDropListConnectedTo]="secondList" #firstList="cdkDropList"
-      (cdkDropListDropped)="drop($event)" style="width: 30%">
-      <div *ngFor="let task of todo" class="pop" cdkDrag>{{task.title}}</div>
-    </div>
-    <div cdkDropList [cdkDropListData]="done" [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
-      (cdkDropListDropped)="drop($event)" style="width: 30%">
-      <div *ngFor="let task of done" class="pop" cdkDrag>{{task.title}}</div>
-    </div>
-  </div> -->
+    </div>  
 </div>

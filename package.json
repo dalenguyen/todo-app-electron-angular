@@ -1,7 +1,7 @@
 {
   "name": "todo-app",
   "version": "1.0.0",
-  "description": "Simple Todo App from Electron and Angular 7",
+  "description": "Simple Todo App from Electron 4 and Angular 7",
   "homepage": "https://github.com/dalenguyen/todo-app-electron-angular",
   "author": {
     "name": "Dale Nguyen",

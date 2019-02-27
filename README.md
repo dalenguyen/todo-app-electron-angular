@@ -6,6 +6,13 @@
 
 A Simple Todo App that is created from [Angular-Electron Template](https://github.com/maximegris/angular-electron.git).
 
+## Features
+
++ You can drag and drop items from Ongoing List to Done and vice versa
++ You can click to the checkbox to remove the task
+
+The way I store and handle data through a JSON file on the local machine is not efficient yet, but it's acceptable for this small to do list. I will try to improve it in the future.
+
 ## Getting Started
 
 Clone this repository locally :
@@ -63,3 +70,7 @@ You can do this! Just by importing your library in npm dependencies (not devDepe
 
 Maybe you want to execute the application in the browser with hot reload ? You can do it with `npm run ng:serve:web`.
 Note that you can't use Electron or NodeJS native libraries in this case. Please check `providers/electron.service.ts` to watch how conditional import of electron/Native libraries is done.
+
+## Reference
+
+[Store data in Electron](https://medium.com/cameron-nokes/how-to-store-user-data-in-electron-3ba6bf66bc1e)

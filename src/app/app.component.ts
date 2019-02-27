@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ElectronService } from './providers/electron.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppConfig } from '../environments/environment';
+import { DatabaseService } from './providers/database.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { AppConfig } from '../environments/environment';
 })
 export class AppComponent {
   constructor(public electronService: ElectronService,
-    private translate: TranslateService) {
+    private translate: TranslateService,
+    public dataService: DatabaseService) {
 
     translate.setDefaultLang('en');
     console.log('AppConfig', AppConfig);
