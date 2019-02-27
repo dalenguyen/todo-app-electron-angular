@@ -1,13 +1,14 @@
 {
-  "name": "angular-electron",
-  "version": "5.1.0",
-  "description": "Angular 7 with Electron (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "Simple Todo App from Electron and Angular 7",
+  "homepage": "https://github.com/dalenguyen/todo-app-electron-angular",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "Dale Nguyen",
+    "email": "dungnq@itbox4vn.com"
   },
   "keywords": [
+    "todo",
     "angular",
     "angular 7",
     "electron",

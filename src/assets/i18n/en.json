@@ -1,7 +1,7 @@
 {
-  "PAGES": {
-      "HOME": {
-          "TITLE": "Electron App works !"
+  "pages": {
+      "todo": {
+          "title": "Todo List!"
       }
   }
 }

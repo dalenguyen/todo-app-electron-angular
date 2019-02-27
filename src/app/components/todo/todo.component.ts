@@ -15,12 +15,12 @@ export interface Todo {
 }
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.scss']
 })
 
-export class HomeComponent {
+export class TodoComponent {
   value = '';
 
   public todo: Todo[] = [
