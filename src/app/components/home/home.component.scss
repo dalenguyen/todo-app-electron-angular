@@ -1,17 +1,24 @@
-.container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.container{
+  margin: 0 20px;  
+}
 
-  background: url(../../../assets/background.jpg) no-repeat center fixed;
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
+mat-grid-tile {
+  background: lightblue;
+}
 
-  .title {
-    color: white;
-    margin:0;
-    padding:50px 20px;
+.example-form-field {
+  width: 100%;
+  button {
+    border: none;
   }
+}
 
+/* Animate items as they're being sorted. */
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Animate an item that has been dropped. */
+.cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
 }

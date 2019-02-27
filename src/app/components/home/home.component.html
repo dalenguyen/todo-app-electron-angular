@@ -1,5 +1,64 @@
 <div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+    <h1>Todo List</h1>
+    <form class="example-form">
+        <mat-form-field class="example-form-field">
+            <input matInput type="text" placeholder="Add new task"              
+              [(ngModel)]="value" 
+              [ngModelOptions]="{standalone: true}" 
+              (keyup.enter)="onSubmit()">
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="clearInput($event)">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>     
+    </form>
+
+    <div class="list">
+        <h3>Ongoing List</h3>
+        <mat-selection-list cdkDropList 
+          [cdkDropListData]="todo" 
+          [cdkDropListConnectedTo]="secondList" 
+          #firstList="cdkDropList"
+          (cdkDropListDropped)="drop($event, 'todo')">
+            <mat-list-option *ngFor="let task of todo; let i = index" cdkDrag (click)="onAreaListControlChanged(i)">
+              {{ task.title }}
+              <mat-divider></mat-divider>
+            </mat-list-option>
+        </mat-selection-list>
+        <h3>Done</h3>
+        <mat-list cdkDropList 
+          [cdkDropListData]="done" 
+          [cdkDropListConnectedTo]="firstList" 
+          #secondList="cdkDropList"
+          (cdkDropListDropped)="drop($event, 'done')">
+            <mat-list-item role="listitem" *ngFor="let task of done" cdkDrag>
+              <s style="color: grey;">{{ task.title }}</s>
+              <mat-divider></mat-divider>
+            </mat-list-item>
+        </mat-list>   
+    </div>
+  <!-- <form  (ngSubmit)="onSubmit(f)" #f="ngForm"> 
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label>New Task</label>
+          <input type="text" class="form-control" name="taskName" ngModel>
+        </div>
+      </div>
+    
+      <div class="col-6">
+        <button type="submit" class="btn btn-success" value="Add Item">Add Item </button>
+      </div>
+    </div>
+  </form>
+  
+  <div style="display: flex">
+    <div cdkDropList [cdkDropListData]="todo" [cdkDropListConnectedTo]="secondList" #firstList="cdkDropList"
+      (cdkDropListDropped)="drop($event)" style="width: 30%">
+      <div *ngFor="let task of todo" class="pop" cdkDrag>{{task.title}}</div>
+    </div>
+    <div cdkDropList [cdkDropListData]="done" [cdkDropListConnectedTo]="firstList" #secondList="cdkDropList"
+      (cdkDropListDropped)="drop($event)" style="width: 30%">
+      <div *ngFor="let task of done" class="pop" cdkDrag>{{task.title}}</div>
+    </div>
+  </div> -->
 </div>
