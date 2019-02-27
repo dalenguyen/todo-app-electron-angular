@@ -12,7 +12,16 @@
 <body>
   <app-root>Loading...</app-root>
   <footer>
-      Created by <a href="https://github.com/dalenguyen/todo-app-electron-angular">Dale Nguyen</a>
+      Created by <a href="https://github.com/dalenguyen/todo-app-electron-angular" target="_blank" id='author'>Dale Nguyen</a>
   </footer>
+  <script>
+    var shell = require('electron').shell;
+    //open links externally by default
+    var author = document.getElementById('author');
+    author.addEventListener('click', function(event) {        
+        event.preventDefault();
+        shell.openExternal(this.href);
+    });
+  </script>
 </body>
 </html>
