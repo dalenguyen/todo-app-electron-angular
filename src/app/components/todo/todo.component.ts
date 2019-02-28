@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 
 import {
   CdkDragDrop,
@@ -7,7 +6,6 @@ import {
   transferArrayItem
 } from '@angular/cdk/drag-drop';
 
-import { MatListOption } from '@angular/material/list';
 import { DatabaseService } from '../../providers/database.service';
 
 export interface Todo {
