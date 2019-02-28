@@ -13,6 +13,8 @@ A Simple Todo App that is created from [Angular-Electron Template](https://githu
 
 The way I store and handle data through a JSON file on the local machine is not efficient yet, but it's acceptable for this small to do list. I will try to improve it in the future.
 
+You can try to install the apps in the **samples folder**.
+
 ## Getting Started
 
 Clone this repository locally :
